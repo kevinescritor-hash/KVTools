@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Manager Pro | Herramienta Educativa</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>PDF Manager Pro</h1>
+            <p>Divide y gestiona documentos localmente</p>
+        </header>
+
+        <main class="card">
+            <input type="file" id="pdf-input" accept="application/pdf">
+            
+            <div id="controls" class="hidden">
+                <div class="mode-selector">
+                    <button onclick="setMode('individual')">Páginas Sueltas</button>
+                    <button onclick="setMode('range')">Rango Específico</button>
+                </div>
+                
+                <div id="range-inputs" class="hidden">
+                    <input type="number" id="rangeStart" placeholder="Inicio">
+                    <input type="number" id="rangeEnd" placeholder="Fin">
+                </div>
+
+                <button id="exec-btn" class="btn-primary">Procesar y Descargar .ZIP</button>
+            </div>
+
+            <div id="status-msg"></div>
+        </main>
+    </div>
+
+    <script src="js/pdf-logic.js"></script>
+</body>
+</html>
